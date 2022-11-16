@@ -15,7 +15,8 @@ origins = [
     "https://localhost.tiangolo.com",
     "http://localhost",
     "http://localhost:8080",
-    "http://146.190.89.237:8000",
+    "http://146.190.89.237",
+    "http://192.168.1.10",
 ]
 
 app.add_middleware(
@@ -34,9 +35,9 @@ labels = pd.read_json('api/data/label.json')
 
 
 #
-@app.get('/')
+@app.get('/api')
 async def base():
-    return {"message": "siap"}
+    return {"message": "oksiap"}
 
 
 def query_db(query, args=(), one=False):
@@ -47,7 +48,7 @@ def query_db(query, args=(), one=False):
     return (r[0] if r else None) if one else r
 
 
-@app.get('/classify-result')
+@app.get('/api/classify-result')
 async def read_rows(subfield, year: int, topic):
     topics = labels[labels['prefix'] == subfield]
     if topic == '1':
@@ -71,7 +72,7 @@ async def read_rows(subfield, year: int, topic):
     }
 
 
-@app.get('/summary-result')
+@app.get('/api/summary-result')
 async def read_summary(subfield):
     topics = list(labels[labels['prefix'] == subfield]['code'])
     attr = ','.join([str(elem) for elem in topics])
@@ -96,7 +97,7 @@ async def read_summary(subfield):
     }
 
 
-@app.get('/thesis-detail')
+@app.get('/api/thesis-detail')
 async def read_theses(eprintid, subfield):
     doc = query_db(
         f"SELECT * FROM {subfield} WHERE eprintid = {eprintid}", one=True)

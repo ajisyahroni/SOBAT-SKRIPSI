@@ -211,7 +211,6 @@ export default {
 
   methods: {
     async loadData(subfield, year, topic) {
-      console.log(url)
       const url = `${API_URL}/classify-result?subfield=${subfield}&year=${year}&topic=${topic}`;
       fetch(url)
         .then((r) => r.json())
