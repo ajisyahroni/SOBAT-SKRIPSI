@@ -16,6 +16,6 @@
 
 
 ## deploying with docker
-1. pastiin udah di direktori root
+1. pastiin udah di direktori root project
 2. eksekusi build local web ```./build-web-local.sh```, kalau belum executable ```chmod u+x build-web-local.sh```
 3. eksekusi docker composenya ```docker-compose up -d```
