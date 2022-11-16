@@ -1,0 +1,27 @@
+version: '3'
+networks:
+  skripsi_net:
+
+
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: python.dockerfile
+    container_name: fastapi-skripsi
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - 8000:8000
+    volumes:
+      - ./api:/app/api
+    networks:
+      - skripsi_net
+  webclient:
+    build:
+      context: ./web
+      dockerfile: vue.dockerfile
+    container_name: vue-web-skripsi
+    ports:
+      - 80:80
+    networks:
+      - skripsi_net

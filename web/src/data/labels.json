@@ -1,0 +1,29 @@
+{
+    "statusCode": 200,
+    "message": "Load document label",
+    "query": {
+        "consentrationId": 1
+    },
+    "data": [
+        {
+            "id": 1,
+            "name": "AI"
+        },
+        {
+            "id": 2,
+            "name": "Desktop"
+        },
+        {
+            "id": 3,
+            "name": "ML"
+        },
+        {
+            "id": 4,
+            "name": "CV"
+        },
+        {
+            "id": 5,
+            "name": "NLP"
+        }
+    ]
+}

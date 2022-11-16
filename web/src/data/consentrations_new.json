@@ -1,0 +1,18 @@
+{
+    "statusCode": 200,
+    "message": "Load consentrations",
+    "data": [
+        {
+            "id": 1,
+            "name": "Programming"
+        },
+        {
+            "id": 3,
+            "name": "Networking"
+        },
+        {
+            "id": 4,
+            "name": "Big Data Analytics"
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+/* 
+FONTS 
+*/
+
+/* ABHAYA LIBRE */
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
+
+.font-abhaya {
+    font-family: 'Abhaya Libre', serif;
+    
+}
+
+
+
+/* QUICKSAND */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.font-quicksand {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+}
+
+
+/* SCROLL BAR */
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #90a4ae;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #78909c;
+}
+
+
+
+/* CUSTOM STYLE */
+/* ============= */
+.v-btn {
+    letter-spacing: 0;
+}

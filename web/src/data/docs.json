@@ -1,0 +1,65 @@
+{
+    "statusCode": 200,
+    "message": "load document by label id",
+    "query": {
+        "labelId": 1
+    },
+    "data": [
+        {
+            "id": 1,
+            "name": "Implementasi Algoritma KNN untuk pencarian data"
+        },
+        {
+            "id": 2,
+            "name": "Optimasi algoritma K-Means"
+        },
+        {
+            "id": 3,
+            "name": "Klasifikasi Jenis Berita Menggunakan metode Naive Bayes"
+        },
+        {
+            "id": 4,
+            "name": "Klasifikasi apel matang dengan open cv"
+        },
+        {
+            "id": 5,
+            "name": "Perancangan dan Analisis Quality of Service (QoS) Menggunakan Metode Virtual Router Redundancy Protocol (VRRP) pada Mikrotik Router (studi kasus SMK Negeri 3 Yogyakarta)"
+        },
+        {
+            "id": 6,
+            "name": "Analisis dan Pengembangan pada Jaringan Wifi Yayasan Sosial Gotong Royong Ambarawa"
+        },
+        {
+            "id": 7,
+            "name": "Analisis Dan Perancangan Pecah Model Busana Dengan Teknik DressMaking Berbasis Android"
+        },
+        {
+            "id": 8,
+            "name": "Analisis dan Perancangan Sistem Informasi Perpustakaan Pada SMP Negeri 5 Banjarnegara"
+        },
+        {
+            "id": 9,
+            "name": "Analisis dan Perancangan Sistem Informasi Sekolah Berbasis Website pada SMA N 11 Purworejo"
+        },
+        {
+            "id": 10,
+            "name": "Analisis dan Perancangan Tool Administrasi Server Linux Sederhana Menggunakan Library Fabric pada Linux Centos 6.4"
+        },
+        {
+            "id": 11,
+            "name": "Analisis dan Perancangan Web Sebagai Media Promosi Pada Pondok Pesantren Putri An Najwa Magelang"
+        },
+        {
+            "id": 12,
+            "name": "Optimalisasi Jaringan Wireless dan Analisis Quality of Service (QoS) Menggunakan Metode Hierarchical Token Bucket (HTB) pada Mistake shop"
+        },
+        {
+            "id": 13,
+            "name": "Akurasi Analisis Sentimen Pada Algoritma Support Vector Machine Dan Random Forest (Study Kasus : Akun PLN_123)"
+        },
+        {
+            "id": 14,
+            "name": "Alat Analisis Domain Berbasis Website Untuk Mengetahui Peringkat Di Mesin Pencari"
+        }
+    ]
+}
