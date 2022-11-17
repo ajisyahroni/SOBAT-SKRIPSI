@@ -145,7 +145,7 @@ import { API_URL } from "../api";
 export default {
   data: () => ({
     // PIE DATA
-    series: [90, 55, 41, 17, 15],
+    series: [10, 10, 10, 10, 10],
     chartOptions: {
       labels: [],
       chart: {
@@ -221,12 +221,19 @@ export default {
           this.labels = it?.data?.available_topics;
 
           // set chart data
-          console.log(it?.data?.chart);
-          this.series = Object.values(it?.data?.chart);
-          this.chartOptions = {
-            ...this.chartOptions,
-            ...{ labels: Object.keys(it?.data?.chart) },
-          };
+          if (it?.data?.chart?.length != 0) {
+            this.series = Object.values(it?.data?.chart);
+            this.chartOptions = {
+              ...this.chartOptions,
+              ...{ labels: Object.keys(it?.data?.chart) },
+            };
+          } else {
+            this.series = [1];
+            this.chartOptions = {
+              ...this.chartOptions,
+              ...{ labels: ["NULL"] },
+            };
+          }
 
           // set attribute
           this.selectedTopic = it?.query?.topic;
