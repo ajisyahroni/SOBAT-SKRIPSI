@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 from fastapi import FastAPI
 import json
+import re
 app = FastAPI()
 con = sqlite3.connect('api/data/db.sqlite')
 cur = con.cursor()
@@ -58,11 +59,19 @@ async def read_rows(subfield, year: int, topic):
 
     docs = query_db(
         f"SELECT * FROM {subfield} WHERE {topic_casted} =1 AND year = {year}")
-    res = {
-        "available_topics": json.loads(topics.to_json(orient="records")),
-        "theses": json.loads(json.dumps(docs)),
-        "chart": json.loads(pd.DataFrame(docs)[list(topics['code'])].sum().to_json()),
-    }
+    if(len(docs) > 0):
+        res = {
+            "available_topics": json.loads(topics.to_json(orient="records")),
+            "theses": json.loads(json.dumps(docs)),
+            "chart": json.loads(pd.DataFrame(docs)[list(topics['code'])].sum().to_json()),
+        }
+    else:
+        res = {
+            "available_topics": json.loads(topics.to_json(orient="records")),
+            "theses": [],
+            "chart": [],
+        }
+
     return {
         "message": "Load Classify Result",
         "status": "OK",
@@ -101,6 +110,20 @@ async def read_summary(subfield):
 async def read_theses(eprintid, subfield):
     doc = query_db(
         f"SELECT * FROM {subfield} WHERE eprintid = {eprintid}", one=True)
+    
+    # parsing multi label into array of multi label value
+    topics: pd.DataFrame = labels[labels['prefix'] == subfield]
+    l = []
+    for k in doc:
+        if(re.match(f'{subfield}_', k) and doc[k] == 1):
+            l.append(k)
+    doc['labels'] = list(topics[topics['code'].isin(l)]['name'])
+    
+    # parsing creators name into string
+    c: str = doc['creators']
+    c: str = re.sub('None', '"-"', c)
+    doc['creators'] = " ".join(re.findall("[A-Z]\w+", c))
+
     return {
         "message": "Load Summary Result",
         "status": "OK",
