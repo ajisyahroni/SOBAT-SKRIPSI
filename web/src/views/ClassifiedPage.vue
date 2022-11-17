@@ -74,7 +74,7 @@
             <v-btn
               :color="selectedTopic == label.code ? '#E1C4B6' : ''"
               @click="setLabel(label.code)"
-              class="mr-2 font-abhaya font-weight-bold text-capitalize"
+              class="mr-1 font-abhaya font-weight-bold text-capitalize mt-1"
               v-for="label in labels"
               :key="label.id"
               depressed
@@ -93,7 +93,9 @@
                 cursor: pointer;
               "
             >
+              <span class="grey--text" v-if="docs.length == 0">kosong</span>
               <li
+                v-else
                 @click="openThesisDialog(doc.eprintid)"
                 v-ripple
                 v-for="doc in docs"
@@ -244,6 +246,8 @@ export default {
             abstract: it?.data?.abstract,
             year: it?.data?.year,
             uri: it?.data?.uri,
+            labels: it?.data?.labels,
+            creators: it?.data?.creators,
           };
           this.$dialog.open(ThesisDetail, {
             props: { detail },

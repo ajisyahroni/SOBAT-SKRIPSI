@@ -13,11 +13,17 @@
 
             <!-- LABELS -->
             <div class="d-flex mt-2">
-              <div
-                class="font-abhaya text-capitalize px-2"
-                style="border-radius: 3px; background-color: #f5f5f5"
-              >
-                Label
+              {{ detail.creators }}
+              <span class="mx-2">|</span>
+              <div>
+                <v-chip
+                  x-small
+                  class="mx-1"
+                  v-for="(labels, i) in detail.labels"
+                  :key="i"
+                >
+                  {{ labels }}
+                </v-chip>
               </div>
             </div>
           </div>
