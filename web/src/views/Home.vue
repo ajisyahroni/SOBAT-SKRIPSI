@@ -10,14 +10,19 @@
         path="https://assets6.lottiefiles.com/packages/lf20_3adn32pc.json"
       />
 
-      <h3 class="font-abhaya font-weight-bold text-center typing-animation">
-        Confusing When Search Thesis in AMIKOM Diglib ?
-      </h3>
+      <div style="width: 170px">
+        <h2 class="font-abhaya font-weight-bold text-center typing-animation">
+          Thesis Classifier
+        </h2>
+      </div>
+
       <v-card-subtitle
         class="font-quicksand slide-in-bottom"
-        style="animation-delay: 4s"
+        style="text-align: center"
       >
-        lemme help you classifying
+        Grouping theses by topic, Hoped that it can help Amikom students in
+        finding thesis references. On the other hand, amikom institutions can
+        see topic trends from time to time
       </v-card-subtitle>
 
       <v-btn
@@ -32,7 +37,6 @@
           mt-5
           slide-in-bottom
         "
-        style="animation-delay: 5s"
       >
         Go Classify
       </v-btn>
@@ -63,7 +67,7 @@ export default {
   border-right: 1px solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  animation: typing 0.5s steps(40, end), blink-caret 0.75s step-end infinite;
   text-align: center;
 }
 
